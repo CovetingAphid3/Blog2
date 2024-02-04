@@ -3,10 +3,10 @@ const express = require("express")
 const morgan = require("morgan")
 const mongoose = require("mongoose")
 
-console.log('working')
+// import blogroutes
 const blogRoutes = require("./routes/blogRoutes")
 
-//express app
+//express app initialize
 const app = express()
 
 //connect to mongodb
@@ -15,12 +15,13 @@ mongoose.connect(dbURI)
     .then(()=>app.listen(3000))
     .catch((err)=>console.log(err))
 
-//register view engine
+//register view engine (ejs)
 app.set('view engine', 'ejs');
 
 //middleware and static files
 app.use(express.static('public'))
-app.use(express.urlencoded({extended:true}))//passes data from form into object
+//passes data from form into object
+app.use(express.urlencoded({extended:true}))
 app.use(morgan('dev'))
 
 //routes

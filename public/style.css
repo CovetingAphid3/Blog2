@@ -1,104 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto-Serif:@400;700&display=swap');
-        body{
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-            font-family: 'Noto Serif',serif;
-        }
-        p,h1,h2,h3,a,ul{
-            margin: 0;
-            padding: 0;
-            text-decoration: none;
-            color:#222;
-        }
-        nav{
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 60px;
-            padding-bottom: 10px;
-            border-bottom: 10px;
-            text-transform: uppercase;
-        }
-        nav ul{
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-        }
-        nav li{
-            list-style-type: none;
-            margin-left: 20px;
-        }
-        nav h1{
-            font-size: 3em;
-        }
-        nav p, nav a{
-            color: #777;
-            font-weight: 300;
-        }
-        footer{
-            color: #777;
-            text-align: center;
-            margin: 80px auto 20px;
-        }
-        h2{
-            margin-bottom: 40px;
-        }
-        h3{
-            text-transform: capitalize;
-            margin-bottom: 8px;
-        }
-        .content{
-            margin-left: 20px;
-        }
-        /* index styles */
-        .blogs a{
-            display: block;
-            margin: 40px 0;
-            padding-left: 30px;
-            border-left: 6px solid crimson;
-        }
-        .blogs a:hover h3{
-            color: crimson;
-        }
-        /* details styles */
-        .details{
-            position: relative;
-        }
-        .delete{
-            position: absolute;
-            top: 0;
-            right: 0;
-            border-radius: 50%;
-            padding: 8px;
-        }
-        .delete:hover{
-            cursor:pointer;
-            box-shadow: 1px 2px 3px rgba(0, 0, 0,0.2);
-        }
-        /* create styles */
-        .create-blog form{
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        .create-blog input,.create-blog textarea{
-            display: block;
-            width: 100%;
-            margin: 10px;
-            padding: 8px;
-        }
-        .create-blog label{
-            display: block;
-            margin-top: 24px;
-        }
-        textarea{
-            height: 120px;
-        }
-        .create-blog button{
-            margin-top: 20px;
-            background: crimson;
-            color: white;
-            padding: 6px;
-            border: 0;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
+@import url("https://fonts.googleapis.com/css2?family=Noto-Serif:@400;700&display=swap");
+body {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+  font-family: "Noto Serif", serif;
+  text-shadow: 8px 8px 10px #0000008c;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath fill='%2318224C' d='M0 50h50V0H0z'/%3E%3Cpath fill='%23181F47' d='M35.704 22.944c-1.352 1.297-4.426.426-6.89-1.963-2.462-2.388-3.37-5.37-2.036-6.648 1.333-1.277 4.426-.426 6.889 1.963 2.463 2.39 3.37 5.352 2.037 6.648M39.296 22.944c-1.352-1.296-.444-4.277 2.019-6.648 2.463-2.37 5.555-3.333 6.833-1.963 1.278 1.37.445 4.278-2.018 6.648-2.463 2.37-5.556 3.241-6.89 1.963'/%3E%3Cpath fill='%231F2D61' d='M35.76 48.148c-1.353 1.296-4.427.426-6.89-1.963-2.463-2.389-3.37-5.37-2.037-6.648 1.334-1.278 4.426-.426 6.89 1.963 2.462 2.389 3.314 5.37 2.036 6.648M39.333 48.148c-1.352-1.296-.444-4.278 2.019-6.648s5.555-3.26 6.889-1.963c1.333 1.296.444 4.296-1.945 6.76-2.389 2.462-5.555 3.166-6.963 1.851M36.26 10.352c-1.353 1.296-4.427.426-6.89-1.963C26.907 6 25.926 3.037 27.352 1.74c1.426-1.297 4.426-.426 6.889 1.963 2.463 2.389 3.37 5.352 2.037 6.648M39.26 10.426c-1.334-1.296-.371-4.278 2.036-6.722 2.408-2.445 5.537-3.185 6.852-1.852 1.315 1.333.445 4.278-2.018 6.648-2.463 2.37-5.556 3.24-6.89 1.963'/%3E%3Cpath fill='%231B2652' d='M35.704 35.537c-1.352 1.296-4.426.426-6.89-1.963-2.462-2.389-3.37-5.37-2.036-6.648 1.333-1.278 4.426-.426 6.889 1.963 2.463 2.389 3.37 5.352 2.037 6.648M39.296 35.537c-1.352-1.296-.444-4.278 2.019-6.648s5.555-3.26 6.889-1.963c1.333 1.296.444 4.278-2.019 6.648s-5.555 3.24-6.889 1.963'/%3E%3Cpath fill='%231F2D61' d='M10.685 23.019c-1.352 1.296-4.426.425-6.889-1.963-2.463-2.39-3.37-5.352-1.944-6.649 1.426-1.296 4.426-.426 6.889 1.963 2.463 2.39 3.37 5.352 2.037 6.649M14.26 23.019c-1.353-1.297-.445-4.278 2.018-6.649 2.463-2.37 5.555-3.259 6.889-1.963 1.333 1.297.444 4.278-2.019 6.649-2.463 2.37-5.555 3.24-6.889 1.963'/%3E%3Cpath fill='%231B2652' d='M10.704 48.148c-1.352 1.296-4.426.426-6.89-1.963-2.462-2.389-3.37-5.444-1.962-6.648 1.407-1.204 4.426-.426 6.889 1.963 2.463 2.389 3.37 5.352 2.037 6.648M14.815 48.148c-1.352-1.296-.445-4.278 2.018-6.648 2.463-2.37 5.556-3.26 6.89-1.963 1.333 1.296.444 4.278-2.02 6.648-2.462 2.37-5.5 3.185-6.888 1.963M10.704 10.333c-1.352 1.297-4.426.426-6.89-1.963C1.353 5.981.445 3.02 1.853 1.722c1.407-1.296 4.37-.407 6.833 1.982s3.37 5.352 2.037 6.648M14.296 10.333c-1.333-1.296-.444-4.277 2.019-6.63 2.463-2.351 5.555-3.259 6.889-1.962 1.333 1.296.444 4.278-2.019 6.648s-5.555 3.24-6.889 1.963M10.704 35.537c-1.352 1.296-4.426.426-6.89-1.963-2.462-2.389-3.37-5.37-2.036-6.648 1.333-1.278 4.426-.426 6.889 1.963 2.463 2.389 3.37 5.352 2.037 6.648M14.815 35.481c-1.352-1.296-.445-4.277 2.018-6.648 2.463-2.37 5.556-3.259 6.89-1.963 1.333 1.297.444 4.278-2.02 6.649-2.462 2.37-5.555 3.24-6.888 1.962'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 50px;
+  height: 100vh;
+  width: 100%;
+  color: white;
+}
+
+h1,
+h2,
+h3,
+a,
+ul {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.heading {
+  font-size: 30px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  padding-bottom: 10px;
+  border-bottom: 10px;
+  text-transform: uppercase;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+nav li {
+  list-style-type: none;
+  margin-left: 20px;
+}
+
+nav h1 {
+  color: white;
+  font-size: 3em;
+}
+nav p,
+nav a {
+  color: white;
+  font-weight: 300;
+}
+
+nav a:hover {
+  color: crimson;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+footer {
+  position: relative;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin: 80px auto 20px;
+}
+h2 {
+  color: white;
+  margin-bottom: 40px;
+}
+h3 {
+  color: white;
+  text-transform: capitalize;
+  margin-bottom: 8px;
+}
+.content {
+  margin-left: 20px;
+}
+/* index styles */
+.blogs a {
+  display: block;
+  margin: 40px 0;
+  padding-left: 30px;
+  border-left: 6px solid crimson;
+}
+.blogs a:hover h3 {
+  color: crimson;
+}
+/* details styles */
+.details {
+  position: relative;
+}
+.delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid black;
+  background-color: rgb(253, 160, 179);
+  border-radius: 10px;
+  padding: 8px;
+}
+.delete:hover {
+  cursor: pointer;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 1);
+}
+/* create styles */
+.create-blog form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.create-blog input,
+.create-blog textarea {
+  display: block;
+  width: 100%;
+  margin: 10px;
+  padding: 8px;
+  background-color: #313638;
+  border: 1px solid white;
+}
+.create-blog label {
+  display: block;
+  margin-top: 24px;
+}
+textarea {
+  height: 120px;
+}
+.create-blog button {
+  margin-top: 20px;
+  background: crimson;
+  color: white;
+  padding: 6px;
+  border: 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
