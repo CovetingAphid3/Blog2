@@ -3,7 +3,7 @@ const express = require("express")
 const morgan = require("morgan")
 const mongoose = require("mongoose")
 
-
+console.log('working')
 const blogRoutes = require("./routes/blogRoutes")
 
 //express app
