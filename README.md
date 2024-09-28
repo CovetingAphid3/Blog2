@@ -27,7 +27,7 @@ To run this project locally (without MongoDB functionality):
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/blog-website.git
+   git clone https://github.com/CovetingAphid3/blog-website.git
    ```
 
 2. **Navigate to the project directory**:
